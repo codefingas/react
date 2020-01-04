@@ -19,15 +19,34 @@
                 name : "Ryu",
                 age : 30
             };
+
+            handleClick = (e) => {
+                // console.log(e.target);
+                 this.setState({
+                     name: 'Yoshi'
+                 });
+                 console.log(this.state);
+            };
+
+            handleMouseOver(e) {
+                console.log(e)
+            };
+
+            handleCopy(e) {
+                console.log("try being original for once");
+            };
             
             render() {
                 return (
                     <div>
                         <h1>Hey, ninjas</h1>
                         <p>My name is {this.state.name} and I am {this.state.age} </p>
+                        <button onClick={this.handleClick}>Click me</button>
+                        <button onMouseOver={this.handleMouseOver}>Hover me</button>
+                        <p onCopy={this.handleCopy}>what we think, we become</p>
                     </div>
                 )
-            };
+            }; 
         };
 
         ReactDOM.render(<App />, document.getElementById("app"));
