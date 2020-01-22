@@ -12,6 +12,7 @@ const Ninjas = (props) => {
                 </div>
             );
         });
+
         
         return (
             <div className="ninja-list">
