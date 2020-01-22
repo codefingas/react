@@ -15,9 +15,18 @@ class App extends Component {
       ninja.id = Math.random();
       let ninjas = [...this.state.ninjas, ninja];
       this.setState({
-        ninjas : ninjas 
+        ninjas : ninjas
       });
   };
+
+  deleteNinja = (id) => {
+    console.log(id);
+    let ninjas = this.state.ninjas.filter(ninja => ninja.id !== id);
+    this.setState({
+      ninjas : ninjas
+    })
+
+  }
 
   render() {
     return (
@@ -26,7 +35,7 @@ class App extends Component {
        <p>Welcome</p>
        <AddNinja addNinja={this.addNinja}/>
        <br/>
-       <Ninjas ninjas={this.state.ninjas}/>
+       <Ninjas deleteNinja={this.deleteNinja} ninjas={this.state.ninjas}/>
       </div>
     );
   }
